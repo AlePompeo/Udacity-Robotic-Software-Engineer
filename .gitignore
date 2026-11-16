@@ -1,0 +1,19 @@
+# catkin / CMake build products
+build/
+devel/
+install/
+logs/
+.catkin_workspace
+CMakeCache.txt
+*.so
+
+# RTAB-Map databases and exported clouds (large; see 04-map-my-world/README.md to recreate them)
+*.db
+*.ply
+
+# temporary and editor files
+*.pyc
+__pycache__/
+*.orig
+*.swp
+.DS_Store

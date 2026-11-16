@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="Sofa">
+    <static>true</static>
+    <link name="body">
+      <collision name="seat_col">
+        <pose>0 0 0.175 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 0.7 0.35</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="seat_vis">
+        <pose>0 0 0.175 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 0.7 0.35</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.7 0.1 0.1 1</ambient>
+          <diffuse>0.7 0.1 0.1 1</diffuse>
+        </material>
+      </visual>
+      <collision name="back_col">
+        <pose>0 0.275 0.6 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 0.15 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="back_vis">
+        <pose>0 0.275 0.6 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 0.15 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.6 0.08 0.08 1</ambient>
+          <diffuse>0.6 0.08 0.08 1</diffuse>
+        </material>
+      </visual>
+      <collision name="arm_l_col">
+        <pose>-0.725 0 0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.7 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="arm_l_vis">
+        <pose>-0.725 0 0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.7 0.3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.6 0.08 0.08 1</ambient>
+          <diffuse>0.6 0.08 0.08 1</diffuse>
+        </material>
+      </visual>
+      <collision name="arm_r_col">
+        <pose>0.725 0 0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.7 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="arm_r_vis">
+        <pose>0.725 0 0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.7 0.3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.6 0.08 0.08 1</ambient>
+          <diffuse>0.6 0.08 0.08 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

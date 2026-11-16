@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>my_robot</name>
+  <version>1.0.0</version>
+  <description>Differential drive robot with a camera and a lidar, and the Gazebo world where it lives</description>
+
+  <maintainer email="noreply@example.com">Alessio Pompeo</maintainer>
+
+  <license>None</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo_dev</build_depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+
+  <export>
+  </export>
+</package>

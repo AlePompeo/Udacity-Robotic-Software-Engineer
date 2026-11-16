@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pick_objects</name>
+  <version>1.0.0</version>
+  <description>Sends the pickup and drop-off goals to move_base</description>
+
+  <maintainer email="noreply@example.com">Alessio Pompeo</maintainer>
+
+  <license>None</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>actionlib</depend>
+  <depend>move_base_msgs</depend>
+  <exec_depend>my_robot</exec_depend>
+</package>

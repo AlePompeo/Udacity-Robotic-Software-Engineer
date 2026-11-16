@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Run after world.launch: map_server, AMCL and move_base, plus RViz (map, laser, robot model, particle cloud) -->
+  <arg name="rviz" default="true"/>
+
+  <include file="$(find my_robot)/launch/amcl.launch"/>
+
+  <node name="rviz_localization" pkg="rviz" type="rviz" respawn="false" args="-d $(find my_robot)/rviz/localization.rviz" if="$(arg rviz)"/>
+
+</launch>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Marker test without the robot: the map frame comes from a static transform -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find my_robot)/maps/home_service.yaml"/>
+  <node name="map_to_odom" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100"/>
+
+  <include file="$(find add_markers)/launch/add_markers.launch">
+    <arg name="mode" value="timed"/>
+  </include>
+
+</launch>

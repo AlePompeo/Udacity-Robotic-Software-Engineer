@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- pose: follow the robot pose (home service); timed: fixed sequence of pauses -->
+  <arg name="mode" default="pose"/>
+
+  <rosparam file="$(find my_robot)/config/zones.yaml" command="load" ns="zones"/>
+
+  <node name="add_markers" pkg="add_markers" type="add_markers" output="screen">
+    <param name="mode" value="$(arg mode)"/>
+  </node>
+
+</launch>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- gui:=false runs Gazebo without its window -->
+  <arg name="gui" default="true"/>
+  <arg name="world_file" default="$(find my_robot)/worlds/home_service.world"/>
+
+  <!-- Robot spawn pose (the pose used for mapping and as AMCL initial pose) -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="-5"/>
+  <arg name="z" default="0.15"/>
+  <arg name="yaw" default="1.5708"/>
+
+  <include file="$(find my_robot)/launch/robot_description.launch"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -param robot_description -model my_robot -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw)"/>
+
+</launch>

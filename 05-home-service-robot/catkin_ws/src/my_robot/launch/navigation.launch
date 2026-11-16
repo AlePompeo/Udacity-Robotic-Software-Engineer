@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Map server, AMCL and move_base -->
+  <include file="$(find my_robot)/launch/amcl.launch"/>
+  <include file="$(find my_robot)/launch/move_base.launch"/>
+
+</launch>

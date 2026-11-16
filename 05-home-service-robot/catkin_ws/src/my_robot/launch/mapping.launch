@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="screen">
+    <remap from="scan" to="/scan"/>
+    <rosparam file="$(find my_robot)/config/gmapping_params.yaml" command="load"/>
+  </node>
+
+</launch>

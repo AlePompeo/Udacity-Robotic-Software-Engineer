@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam file="$(find my_robot)/config/zones.yaml" command="load" ns="zones"/>
+
+  <node name="pick_objects" pkg="pick_objects" type="pick_objects" output="screen"/>
+
+</launch>

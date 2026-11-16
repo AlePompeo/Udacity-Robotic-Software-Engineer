@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="map_file" default="$(find my_robot)/maps/home_service.yaml"/>
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <remap from="scan" to="/scan"/>
+    <rosparam file="$(find my_robot)/config/amcl_params.yaml" command="load"/>
+  </node>
+
+</launch>

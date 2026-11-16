@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- world:=custom_world.world loads the custom world; gui:=false and rviz:=false run without windows -->
+  <arg name="world" default="kitchen_dining.world"/>
+  <arg name="gui" default="true"/>
+  <arg name="rviz" default="true"/>
+
+  <!-- Robot pose -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.15"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+  <!-- Gazebo finds the supplied model (kitchen_dining) in the package -->
+  <env name="GAZEBO_MODEL_PATH" value="$(find my_robot)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+
+  <!-- Robot description, joint states and tf -->
+  <include file="$(find my_robot)/launch/robot_description.launch"/>
+
+  <!-- World -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="world_name" value="$(find my_robot)/worlds/$(arg world)"/>
+  </include>
+
+  <!-- Robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -param robot_description -model my_robot
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find my_robot)/rviz/mapping.rviz" if="$(arg rviz)"/>
+
+</launch>

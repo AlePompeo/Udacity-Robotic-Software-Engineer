@@ -1,0 +1,11 @@
+<launch>
+  <node name="drive_bot" type="drive_bot" pkg="ball_chaser" output="screen"/>
+
+  <node name="process_image" type="process_image" pkg="ball_chaser" output="screen">
+    <!-- "any": white, red, green, blue, cyan and purple balls. "white": only a pure white ball -->
+    <param name="target_color" value="any"/>
+    <!-- Used to tell a ball resting on the floor from other objects (meters) -->
+    <param name="ball_diameter" value="0.2"/>
+    <param name="camera_height" value="0.15"/>
+  </node>
+</launch>

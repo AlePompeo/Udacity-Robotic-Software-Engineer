@@ -1,0 +1,11 @@
+# Pickup and drop-off zones of the home service robot (map frame, meters and radians)
+pickup_x: 1.0
+pickup_y: -1.5
+pickup_yaw: 0.0
+dropoff_x: -6.0
+dropoff_y: 0.0
+dropoff_yaw: 0.0
+# Distance at which add_markers considers a zone reached
+tolerance: 0.3
+# Seconds the robot waits at the pickup zone
+wait_time: 5.0
